@@ -13,6 +13,18 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+
+        $designations = [
+            'Designer',
+            'Developer',
+            'Tester',
+            'Manager',
+            'Director',
+        ];
+        foreach( $designations as $designation ) {
+            \App\Models\Designation::create([
+                'name' => $designation,
+            ]);
+        }
     }
 }
