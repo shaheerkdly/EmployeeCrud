@@ -63,8 +63,10 @@
                                     <td>{{ $employee->designationName }}</td>
                                     <td>
                                         @if($employee->image)
-                                        <img src="{{ asset('images/' . $employee->image) }}" width="150 px"
-                                            height="150 px">
+                                        <a href="{{ asset('images/' . $employee->image) }}" target="_blank">
+                                            <img src="{{ asset('images/' . $employee->image) }}" width="150 px"
+                                                height="150 px">
+                                        </a>
                                         @endif
                                     </td>
                                     <td>
