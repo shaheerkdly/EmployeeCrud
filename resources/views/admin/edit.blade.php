@@ -72,11 +72,26 @@
                                 <label for="image">Photo Upload</label>
                                 <div class="input-group">
                                     <input type="file" id="image" name="image" accept="image/*">
+                                    @if($employee->image)
+                                    @endif
                                 </div>
                                 @error('image')
                                 <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
                             </div>
+
+                            @if($employee->image)
+                            <div class="form-group" id="imageDiv">
+                                <label for="delete_image">Delete Photo</label>
+                                <input type="checkbox" id="delete_image" name="delete_image" value="1">
+                                <div class="input-group" id="imageDisplay">
+                                    <a href="{{ asset('images/' . $employee->image) }}" target="_blank">
+                                        <img src="{{ asset('images/' . $employee->image) }}" width="150 px"
+                                            height="150 px">
+                                    </a>
+                                </div>
+                            </div>
+                            @endif
 
                         </div>
                         <!-- /.card-body -->
@@ -101,4 +116,17 @@
 @section('scripts')
 <!-- SweetAlert2 -->
 <script src="{{ asset('adminlte/plugins/sweetalert2/sweetalert2.min.js') }}"></script>
+<script>
+    $('#image').change(function() {
+        $("#imageDiv").hide()
+        $( "#delete_image" ).prop( "checked", false );
+    });
+    $("#delete_image").click(function () {
+        if ($(this).is(":checked")) {
+            $("#imageDisplay").hide();
+        } else {
+            $("#imageDisplay").show();
+        }
+    });
+</script>
 @endsection

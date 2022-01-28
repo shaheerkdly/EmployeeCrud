@@ -72,7 +72,7 @@
                             <div class="form-group">
                                 <label for="image">Image Upload</label>
                                 <div class="input-group">
-                                    <input type="file" id="image" name="image" accept="image">
+                                    <input type="file" id="image" name="image" accept="image/*">
                                 </div>
                                 @error('image')
                                 <div class="alert alert-danger">{{ $message }}</div>

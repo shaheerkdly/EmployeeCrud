@@ -74,6 +74,12 @@ class EmployeeController extends Controller
                 unlink("images/".$employee->image);
             }
             $this->imageUploadFunction($employee, $request->image);
+        } elseif ($request->has('delete_image')) {
+            if ($employee->image) {
+                unlink("images/".$employee->image);
+                $employee->image = null;
+                $employee->update();
+            }
         }
         $request->session()->flash('message', 'Updated');
         return redirect()->route('index');
