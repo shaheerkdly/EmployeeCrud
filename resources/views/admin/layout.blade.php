@@ -82,7 +82,7 @@
                             alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block"></a>
+                        <a href="#" class="d-block">Admin</a>
                     </div>
                 </div>
 
@@ -94,9 +94,9 @@
                with font-awesome or any other icon font library -->
                         <li class="nav-item">
                             <a href="{{ route('index') }}" class="nav-link">
-                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <i class="nav-icon fas fa-users"></i>
                                 <p>
-                                    Dashboard
+                                    Employees
                                 </p>
                             </a>
                         </li>
