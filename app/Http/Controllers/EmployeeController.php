@@ -31,7 +31,7 @@ class EmployeeController extends Controller
             'name' => 'required|string',
             'email' => 'required|email',
             'designation' => 'required|exists:designations,id',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:5120',
         ]);
         $employee = new Employee();
         $employee->name = $request->name;
@@ -62,7 +62,8 @@ class EmployeeController extends Controller
             'name' => 'required|string',
             'email' => 'required|email',
             'designation' => 'required|exists:designations,id',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:5120',
+            'delete_image' => 'nullable|in:1',
         ]);
         $employee->name = $request->name;
         $employee->email = $request->email;
